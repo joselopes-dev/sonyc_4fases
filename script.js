@@ -13,6 +13,43 @@ const obstacleTop2 = document.getElementById('obstacleTop2');
 const obstacleBottom2 = document.getElementById('obstacleBottom2');
 const restartButton = document.getElementById('restartButton');
 
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+        jump();
+    } else if (event.code === 'ArrowRight') {
+        moveRight();
+    } else if (event.code === 'ArrowLeft') {
+        moveLeft();
+    }
+});
+
+// Suporte para toque em dispositivos móveis
+document.addEventListener('touchstart', function(event) {
+    // Verifica a posição do toque para determinar a ação
+    const touchX = event.touches[0].clientX;
+
+    if (touchX < window.innerWidth / 2) {
+        moveLeft(); // Tocar no lado esquerdo da tela move o jogador para a esquerda
+    } else {
+        moveRight(); // Tocar no lado direito da tela move o jogador para a direita
+    }
+});
+
+gameArea.addEventListener('touchstart', function() {
+    jump(); // Tocar na tela faz o jogador pular
+});
+
+
+
+
+
+
+document.getElementById('leftButton').addEventListener('click', moveLeft);
+document.getElementById('rightButton').addEventListener('click', moveRight);
+document.getElementById('jumpButton').addEventListener('click', jump);
+
+
 let isJumping = false;
 let playerPositionLeft = 50;
 let gameWidth = window.innerWidth;
