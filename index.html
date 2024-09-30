@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Obstáculos - Múltiplas Fases</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="game-area">
+        <div class="player" id="player"></div>
+        <div class="obstacle" id="obstacle1"></div>
+        <div class="obstacle" id="obstacle2" style="display: none;"></div>
+        <div class="obstacle" id="obstacle3" style="display: none;"></div>
+        <div class="obstacle from-top" id="obstacleTop" style="display: none;"></div> <!-- Obstáculo que vem de cima -->
+        <div class="obstacle from-bottom" id="obstacleBottom" style="display: none;"></div> <!-- Obstáculo que vem de baixo -->
+
+        <div id="obstacleTop2" class="obstacle from-top2" style="display: none;"></div> <!-- Obstáculo que vem de cima -->
+        <div id="obstacleBottom2" class="obstacle from-bottom2" style="display: none;"></div> <!-- Obstáculo que vem de cima -->
+
+    </div>
+    
+
+    <div class="game-over-message" id="gameOverMessage">Game Over</div>
+    <div class="game-won-message" id="gameWonMessage">VOCÊ VENCEU!</div>
+    <button id="restartButton" style="display: none;">Reiniciar</button>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+</body>
+</html>
+
+

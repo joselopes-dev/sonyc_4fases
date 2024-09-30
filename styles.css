@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0f7fa;
+    font-family: 'Arial', sans-serif;
+}
+
+.game-area {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    height: 600px;
+    border: 2px solid #333;
+    overflow: hidden;
+    background-image: url('nuvens.gif');
+}
+    
+.player {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    background-image: url('img-sonyc-unscreen.gif'); /* Substitua 'animal.png' pelo caminho da sua imagem */
+    background-size: cover; /* Ajusta o tamanho da imagem */
+    background-position: center;
+    border-radius: 0; /* Remove a borda arredondada para a imagem se ajustar corretamente */
+}
+
+#player {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    bottom: 0px;
+    left: 50px; /* Posição inicial */
+}
+
+.game-won-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem; /* Tamanho grande */
+    color: green;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: none; /* Escondido até ser necessário */
+    z-index: 1000; /* Para garantir que fique acima de todos os elementos */
+}
+
+.game-over-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem; /* Tamanho grande */
+    color: red;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: none; /* Escondido até ser necessário */
+    z-index: 1000; /* Para garantir que fique acima de todos os elementos */
+}
+
+
+
+#restartButton {
+    position: absolute;
+    top: 60%; /* Abaixo da mensagem de vitória ou game over */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* Escondido até ser necessário */
+}
+
+/* CSS Básico permanece o mesmo */
+
+/* Adicionando estilo para o obstáculo da terceira fase */
+#obstacle3 {
+    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-color: green; /* Mudança de cor para a fase 3 */
+    animation-duration: 1.5s; /* Velocidade maior para a fase 3 */
+    border-radius: 50%;
+}
+
+
+
+@keyframes moveObstacle {
+    0% { left: 100%; }
+    100% { left: -50px; }
+}
+
+#obstacle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 0;
+    right: 0;
+    background-color: red;
+    animation: moveObstacle 3s linear infinite; /* Adicione sua animação aqui */
+    
+}
+
+
+.obstacle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 0;
+    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    animation: moveObstacle 3s linear infinite;
+    
+}
+
+#obstacle1 {
+    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-color: rgb(221, 174, 56); /* Um obstáculo diferente visualmente para a segunda fase */
+    animation-duration: 2s; /* O obstáculo se move mais rápido */
+    border-radius: 50%;
+}
+
+#obstacle2 {
+    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-color: blue; /* Um obstáculo diferente visualmente para a segunda fase */
+    animation-duration: 2s; /* O obstáculo se move mais rápido */
+    border-radius: 50%;
+}
+
+
+@keyframes moveObstacle {
+    from {
+        right: 0;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+
+@keyframes explosion {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(2); /* Aumenta a explosão durante a animação */
+    }
+    100% {
+        opacity: 0;
+        transform: scale(4); /* O tamanho final da explosão será maior */
+    }
+}
+
+.explode {
+    position: absolute;
+    width: 500px; /* Aumenta o diâmetro inicial da explosão */
+    height: 500px;
+    background-color: orange;
+    border-radius: 50%;
+    animation: explosion 0.8s forwards; /* Duração maior para uma explosão mais lenta */
+    opacity: 0;
+}
+
+
+
+/* Estilos para os obstáculos que vêm de cima */
+.obstacle.from-top {
+    position: absolute;
+    top: 0;
+    left: 80%; /* Posição inicial no eixo horizontal */
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    animation: moveTopToBottom 4s linear infinite;
+    border-radius: 50px;
+}
+
+.obstacle.from-top2 {
+    position: absolute;
+    top: 0;
+    left: 40%; /* Posição inicial no eixo horizontal */
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    animation: moveTopToBottom 4s linear infinite;
+    border-radius: 50px;
+}
+
+/* Estilos para os obstáculos que vêm de baixo */
+.obstacle.from-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 60%; /* Posição inicial no eixo horizontal */
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    animation: moveBottomToTop 4s linear infinite;
+}
+
+.obstacle.from-bottom2 {
+    position: absolute;
+    bottom: 0;
+    left: 20%; /* Posição inicial no eixo horizontal */
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    animation: moveBottomToTop 4s linear infinite;
+}
+
+/* Animação para mover os obstáculos de cima para baixo */
+@keyframes moveTopToBottom {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 100%; /* Vai até o final da tela */
+    }
+}
+
+/* Animação para mover os obstáculos de baixo para cima */
+@keyframes moveBottomToTop {
+    0% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 100%; /* Vai até o topo da tela */
+    }
+}
