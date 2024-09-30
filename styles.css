@@ -20,7 +20,7 @@ body {
     height: 600px;
     border: 2px solid #333;
     overflow: hidden;
-    background-image: url('./nuvens.gif');
+    background-image: url('nuvens.gif');
 }
     
 .player {
@@ -29,7 +29,7 @@ body {
     left: 50px;
     width: 50px;
     height: 50px;
-    background-image: url('./img-sonyc-unscreen.gif'); /* Substitua 'animal.png' pelo caminho da sua imagem */
+    background-image: url('img-sonyc-unscreen.gif'); /* Substitua 'animal.png' pelo caminho da sua imagem */
     background-size: cover; /* Ajusta o tamanho da imagem */
     background-position: center;
     border-radius: 0; /* Remove a borda arredondada para a imagem se ajustar corretamente */
@@ -87,7 +87,7 @@ body {
 
 /* Adicionando estilo para o obstáculo da terceira fase */
 #obstacle3 {
-    background-image: url('./bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
     background-color: green; /* Mudança de cor para a fase 3 */
     animation-duration: 1.5s; /* Velocidade maior para a fase 3 */
     border-radius: 50%;
@@ -117,20 +117,20 @@ body {
     width: 50px;
     height: 50px;
     bottom: 0;
-    background-image: url('./bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
     animation: moveObstacle 3s linear infinite;
     
 }
 
 #obstacle1 {
-    background-image: url('./bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
     background-color: rgb(221, 174, 56); /* Um obstáculo diferente visualmente para a segunda fase */
     animation-duration: 2s; /* O obstáculo se move mais rápido */
     border-radius: 50%;
 }
 
 #obstacle2 {
-    background-image: url('./bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
     background-color: blue; /* Um obstáculo diferente visualmente para a segunda fase */
     animation-duration: 2s; /* O obstáculo se move mais rápido */
     border-radius: 50%;
@@ -236,4 +236,22 @@ body {
     100% {
         bottom: 100%; /* Vai até o topo da tela */
     }
+}
+
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
 }
