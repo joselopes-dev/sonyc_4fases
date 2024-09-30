@@ -20,7 +20,8 @@ body {
     height: 600px;
     border: 2px solid #333;
     overflow: hidden;
-    background-image: url('nuvens.gif');
+    background-image: url('./nuvens.gif');
+    padding: 0px 10px;
 }
     
 .player {
@@ -29,7 +30,7 @@ body {
     left: 50px;
     width: 50px;
     height: 50px;
-    background-image: url('img-sonyc-unscreen.gif'); /* Substitua 'animal.png' pelo caminho da sua imagem */
+    background-image: url('./img-sonyc-unscreen.gif'); /* Substitua 'animal.png' pelo caminho da sua imagem */
     background-size: cover; /* Ajusta o tamanho da imagem */
     background-position: center;
     border-radius: 0; /* Remove a borda arredondada para a imagem se ajustar corretamente */
@@ -41,7 +42,7 @@ body {
     height: 50px;
     border-radius: 50%;
     bottom: 0px;
-    left: 50px; /* Posição inicial */
+    left: 20px; /* Posição inicial */
 }
 
 .game-won-message {
@@ -87,7 +88,7 @@ body {
 
 /* Adicionando estilo para o obstáculo da terceira fase */
 #obstacle3 {
-    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-image: url('./bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
     background-color: green; /* Mudança de cor para a fase 3 */
     animation-duration: 1.5s; /* Velocidade maior para a fase 3 */
     border-radius: 50%;
@@ -117,20 +118,20 @@ body {
     width: 50px;
     height: 50px;
     bottom: 0;
-    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-image: url('./bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
     animation: moveObstacle 3s linear infinite;
     
 }
 
 #obstacle1 {
-    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-image: url('./bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
     background-color: rgb(221, 174, 56); /* Um obstáculo diferente visualmente para a segunda fase */
     animation-duration: 2s; /* O obstáculo se move mais rápido */
     border-radius: 50%;
 }
 
 #obstacle2 {
-    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-image: url('./bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
     background-color: blue; /* Um obstáculo diferente visualmente para a segunda fase */
     animation-duration: 2s; /* O obstáculo se move mais rápido */
     border-radius: 50%;
@@ -254,4 +255,39 @@ button {
     color: #fff;
     border: none;
     border-radius: 5px;
+}
+
+
+@media (max-width: 640px) {
+    button {
+        font-size: 10px;
+    }
+}
+
+#gameOverMessage, #gameWonMessage {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: red;
+    text-align: center;
+    z-index: 10; /* Garantir que a mensagem esteja acima do resto */
+    
+}
+
+#restartButton {
+    display: none;
+    position: absolute;
+    top: 50%; /* Posicionar abaixo da mensagem */
+    left: 50%;
+    transform: translate(-50%, 20px); /* Ajustar para ficar centralizado e abaixo */
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    z-index: 9; /* Deve ser menor que o da mensagem, mas ainda acima dos outros elementos */
 }
