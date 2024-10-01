@@ -262,6 +262,12 @@ button {
     button {
         font-size: 8px;
     }
+
+    .obstacle {
+    position: absolute;
+    width: 30px;
+    height: 30px;    
+}
 }
 
 #gameOverMessage, #gameWonMessage {
