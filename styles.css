@@ -118,9 +118,10 @@ body {
     width: 50px;
     height: 50px;
     bottom: 0;
-    background-image: url('./bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-image: url('bola_eletrica.gif'); /* Um obstáculo diferente visualmente para a segunda fase */
+    background-repeat: no-repeat;
+    background-size: cover;
     animation: moveObstacle 3s linear infinite;
-    
 }
 
 #obstacle1 {
@@ -263,11 +264,14 @@ button {
         font-size: 8px;
     }
 
-    .obstacle {
-    position: absolute;
-    width: 30px;
-    height: 30px;    
-}
+   .obstacle {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-image: url('./bola_eletrica_35x35.gif'); 
+        background-repeat: no-repeat;   
+        background-size: cover;    
+    }
 }
 
 #gameOverMessage, #gameWonMessage {
