@@ -274,7 +274,7 @@ button {
     }
 }
 
-@media (max-height: 300px) {
+@media (max-height: 400px) {
     button {
        display: none;
     }
