@@ -275,9 +275,13 @@ button {
 }
 
 @media (max-height: 400px) {
-    button {
+     .controls {
        display: none;
     }
+
+    .game-area {
+        height: 350px;
+    }  
 }
 
 #gameOverMessage, #gameWonMessage {
