@@ -17,7 +17,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 100vw;
-    height: 500px;
+    height: 350px;
     border: 2px solid #333;
     overflow: hidden;
     background-image: url('./nuvens.gif');
