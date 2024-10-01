@@ -267,3 +267,12 @@ function showRestartButton() {
 restartButton.addEventListener('click', function() {
     window.location.reload();
 });
+
+function updateGameWidth() {
+    gameWidth = window.innerWidth;
+    playerWidth = player.offsetWidth;
+}
+
+window.addEventListener('resize', updateGameWidth);
+updateGameWidth(); // Chame a função quando a página carregar
+
