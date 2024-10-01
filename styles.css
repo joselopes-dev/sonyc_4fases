@@ -274,6 +274,12 @@ button {
     }
 }
 
+@media (max-height: 300px) {
+    button {
+       display: none;
+    }
+}
+
 #gameOverMessage, #gameWonMessage {
     display: none;
     position: absolute;
